@@ -12,7 +12,7 @@ En este repositorio los profesores vamos a subir ejemplos y ejercicios de los do
  - Por cada **tema se ha creado una carpeta** (module-1, module-2 y module-3)
  - En cada módulo **los ejercicios están ordenados por lecciones** (lesson-1, lesson-2...)
  - Dentro de cada módulo también **encontrarás una carpeta con el ejercicio global** que haremos para practicar
- - También verás una **carpeta con el ejercicio de repaso** (review) de cada módulo
+ - También verás una **carpeta con el ejercicio de repaso** (review) y con **el repaso final** (final-review) de cada módulo 
  - Una carpeta con la **solución de la evaluación intermedia** (midterm-evaluation) de cada módulo
 
 Existen otras carpetas interesantes en este repo que no debes perder de vista:
