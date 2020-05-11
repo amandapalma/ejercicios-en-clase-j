@@ -4,10 +4,9 @@ En este repositorio los profesores vamos a subir ejemplos y ejercicios de los do
 
 ## Cómo trabajar con este repo
 
-Es muy importante que antes de nada te clones el repositorio en tu ordenador, de esta manera siempre tendrás acceso a los ejercicios.
-En este repo no debes subir ejercicios, utilízalo como fuente de recursos, si quieres trabajar sobre un ejercicio crea una copia para poder modificarla pero no la subas a este repo.
-ES MUY IMPORTANTE que hagas pull periódicamente de este repo para tener actualizado el material, los profes subiremos ejercicios todos los días y de esta manera te aseguraras que estás a la última ;)
-
+ - Es muy importante que antes de nada te clones el repositorio en tu ordenador, de esta manera siempre tendrás acceso a los ejercicios.
+ - En este repo no debes subir ejercicios, utilízalo como fuente de recursos, si quieres trabajar sobre un ejercicio crea una copia para poder modificarla pero no la subas a este repo.
+ - ES MUY IMPORTANTE que hagas pull periódicamente de este repo para tener actualizado el material, los profes subiremos ejercicios todos los días y de esta manera te aseguraras que estás a la última ;)
 
 ## Estructura de ficheros
 
