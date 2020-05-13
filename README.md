@@ -11,6 +11,7 @@ En este repositorio los profesores vamos a subir ejemplos y ejercicios de los do
  ## Entendiendo la estructura del repo
  - Por cada **tema se ha creado una carpeta** (module-1, module-2 y module-3)
  - En cada módulo **los ejercicios están ordenados por lecciones** (lesson-01, lesson-02...)
+ - Dentro encontrarás ejercicios que se hayan resuleto del temario, no todos solamente los que se hayan resuelto en clase por dudas (exercise-01,exercise-02) u otros ejercicios hechos por los profes para potenciar algunos conceptos (flexbox-example, fetch-api...)
  - Dentro de cada módulo también **encontrarás una carpeta con el ejercicio global** que haremos para practicar
  - También verás una **carpeta con el ejercicio de repaso** (review) y con **el repaso final** (final-review) de cada módulo 
  - Una carpeta con la **solución de la evaluación intermedia** (midterm-evaluation) de cada módulo
