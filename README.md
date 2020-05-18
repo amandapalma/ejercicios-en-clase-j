@@ -18,6 +18,8 @@ Los ejercicios están colocados por orden con la siguiente nomenclatura:
  - **Ejercicios de repaso final**---> modulo-X-repaso-final-descripcion _(Ej: modulo-1-repaso-final-webpage)_
  - **Ejercicios de resolución de dudas**---> modulo-X-resolución-de-dudas-descripcion _(Ej: modulo-1-resoluciom-de-dudas-flexbox)_
  - **Ejercicios globales**---> modulo-X-global-descripcion _(Ej: modulo-1-global-spotify)_
+  - **Tutoriales**---> tutorials _(Videos explicativos útiles para tener a mano)_
+
  
 ## Estructura de ficheros (ejemplo)
 
