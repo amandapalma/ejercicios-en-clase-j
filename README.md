@@ -9,42 +9,25 @@ En este repositorio los profesores vamos a subir ejemplos y ejercicios de los do
  - ES MUY IMPORTANTE que hagas pull periódicamente de este repo para tener actualizado el material, los profes subiremos ejercicios todos los días y de esta manera te asegurarás que estás a la última ;)
  
  ## Entendiendo la estructura del repo
- - Por cada **tema se ha creado una carpeta** (module-1, module-2 y module-3)
- - En cada módulo **los ejercicios están ordenados por lecciones** (lesson-01, lesson-02...)
- - Dentro encontrarás **ejercicios que se hayan resuelto del temario**, no todos, solamente los que se hayan resuelto en clase por dudas (exercise-01,exercise-02) u **otros ejercicios hechos por los profes para potenciar algunos conceptos** (flexbox-example, fetch-api...)
- - Dentro de cada módulo también **encontrarás una carpeta con el ejercicio global** que haremos para practicar
- - También verás una **carpeta con el ejercicio de repaso** (review) y con **el repaso final** (final-review) de cada módulo 
- - Una carpeta con la **solución de la evaluación intermedia** (midterm-evaluation) de cada módulo
+Los ejercicios están colocados por orden con la siguiente nomenclatura:
 
-Existen otras carpetas interesantes en este repo que no debes perder de vista:
-- **Tutorials**. Ahí están todos los tutoriales que necesitas tener a la vista durante el curso y que afectan a todos los módulos o son interesantes.
-- **Extras**. Carpeta de recursos extra
-
-## Estructura de ficheros
+**Ejercicios del temario**---> modulo-X-leccion-X-ejercicio-X-descripcion (Ej: modulo-1-leccion-01-ejercicio-01-html-tags)
+**Ejercicios de ejemplo que no son del temario**---> modulo-X-leccion-X-ejemplo-descripcion (Ej: modulo-1-leccion-03-ejemplo-display-block-inline)
+  **Ejercicios de repaso intermedio**---> modulo-X-repaso-intermedio-descripcion (Ej: modulo-1-repaso-intermedio-fire-engine)
+**Ejercicios de solución evaluación intermedia**---> modulo-X-solución-evaluación-intermedia-descripcion (Ej: modulo-1-repaso-evaluación-intermedia-webpage)
+**Ejercicios de repaso final**---> modulo-X-repaso-final-descripcion (Ej: modulo-1-repaso-final-webpage)
+**Ejercicios de resolución de dudas**---> modulo-X-resolución-de-dudas-descripcion (Ej: modulo-1-resoluciom-de-dudas-flexbox)
+**Ejercicios globales**---> modulo-X-global-descripcion (Ej: modulo-1-global-spotify)
+ 
+## Estructura de ficheros (ejemplo)
 
 ```
-/ejercicio-en-clase-j
-  └ module-1/
-    ├ lesson-01/
-    | └ exercise-1-morning/
-    | └ exercise-3-afternoon/
-    ├ global/
-    | └ afternoon/
-    | └ morning/
-    ├ midterm-review/
-    | └ afternoon/
-    | └ morning/
-    ├ midterm-evaluation/
-    | └ afternoon/
-    | └ morning/
-    ├ final-review/
-    | └ afternoon/
-    | └ morning/
-    ├ final-evaluation/
-    | └ afternoon/
-    | └ morning/
-    ├ tutorials
-    └ extras
+/ejercicios-en-clase-j
+  └ modulo-1-leccion-01-ejercicio-01-html-tags
+  ├ modulo-1-leccion-01-ejercicio-02-gazpacho
+  ├ modulo-2-leccion-01-ejercicio-01-variables
+  ├ modulo-2-leccion-02-ejercicio-02-condicionales
+  ├ modulo-3-leccion-01-ejercicio-01-props
+  ├ modulo-3-leccion-02-ejercicio-02-estado
+  ...
 ```
-
-Prueba Zapier 1
