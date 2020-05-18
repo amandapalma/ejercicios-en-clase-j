@@ -4,10 +4,10 @@ En este repositorio los profesores vamos a subir ejemplos y ejercicios de los do
 
 ## Cómo trabajar con este repo
 
- - Es muy importante que antes de nada te clones el repositorio en tu ordenador, de esta manera siempre tendrás acceso a los ejercicios.
+ - Es muy importante que **antes de nada te clones el repositorio en tu ordenador**, de esta manera siempre tendrás acceso a los ejercicios.
  - En este repo no debes subir ejercicios, utilízalo como fuente de recursos, si quieres trabajar sobre un ejercicio crea una copia para poder modificarla pero no la subas a este repo.
- - ES MUY IMPORTANTE que hagas pull periódicamente de este repo para tener actualizado el material, los profes subiremos ejercicios todos los días y de esta manera te asegurarás que estás a la última ;)
- 
+ - **ES MUY IMPORTANTE que hagas pull periódicamente** de este repo para tener actualizado el material, los profes subiremos ejercicios todos los días y de esta manera te asegurarás que estás a la última ;)
+
  ## Entendiendo la estructura del repo
 Los ejercicios están colocados por orden con la siguiente nomenclatura:
 
@@ -20,18 +20,17 @@ Los ejercicios están colocados por orden con la siguiente nomenclatura:
  - **Ejercicios globales**---> modulo-X-global-descripcion _(Ej: modulo-1-global-spotify)_
   - **Tutoriales**---> tutorials _(Videos explicativos útiles para tener a mano)_
 
- 
+
 ## Estructura de ficheros (ejemplo)
 
 ```
 /ejercicios-en-clase-j
-  └ modulo-1-leccion-01-ejercicio-01-html-tags
+  ├ modulo-1-leccion-01-ejercicio-01-html-tags
   ├ modulo-1-leccion-01-ejercicio-02-gazpacho
   ├ modulo-2-leccion-01-ejercicio-01-variables
   ├ modulo-2-leccion-02-ejercicio-02-condicionales
   ├ modulo-3-leccion-01-ejercicio-01-props
   ├ modulo-3-leccion-02-ejercicio-02-estado
-  ├ tutorials
-    └ live-share
+  └ tutorials-live-share
   ...
 ```
