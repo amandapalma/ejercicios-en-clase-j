@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      display: grid;
+      /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 20vh 60vh 20vh;
+    }
+
+    header {
+      background-color:green;
+      grid-column: span 6
+    }
+
+    main {
+      background-color:grey;
+      grid-column: span 5
+    }
+
+    aside {
+      background-color:pink;
+    }
+
+    footer {
+      background-color:orange;
+      grid-column: span 6
+    }
+
+    @media all and (min-width:768px) {
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>cabecera</header>
+    <main>cuerpo</main>
+    <aside>lateral</aside>
+    <footer>pie</footer>
+  </div>
+</body>
+</html>
