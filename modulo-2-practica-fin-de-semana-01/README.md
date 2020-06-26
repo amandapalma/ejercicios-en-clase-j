@@ -24,9 +24,13 @@ Si el usuario supera los 3 intentos aparecerá un mensaje de alert que diga est�
 
 NOTA: Para mostrar los mensajes por consola normalmente usamos console.log('Mi mensaje'), ahora utilizaremos alert('Mi mensaje') que nos muestra un modal del navegador.
 
+--------
+La finalidad de este ejercicio no es que lo realices obligatoriamente, es para practicar y asimilar conceptos. No se va a corregir en clase así que no tienes que terminarlo si no puedes, la semana que viene subiremos la solución para que puedas razonarlo y completar la solución por tí misma si no lo has conseguido.
+
+Te recomendamos que analices la lógica, pintes en un papel, pienses en las herramientas de las que dispones antes de escribir código....
+
+No es obligatorio subirlo a ningún repo.¡Puedes hacerlo!
+
 ¡¡Diviértete!!
 
 🦄🦄🦄💩💩💩
-
-
-
