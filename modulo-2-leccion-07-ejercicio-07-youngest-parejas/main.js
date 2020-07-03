@@ -32,6 +32,7 @@ const students = [
   }
 ]
 
+
 //planteo que necesito comparar dos valores, la edad en la que estoy iterando en ese momento y la edad que voy a acumular
 //creo la variable youngest dandole el valor de la edad de la primera adalaber
 //comienzo a iterar el bucle en vez de en 0 en 1 para partir de la siguiente adalaber y poder hacer esa comparación
