@@ -3,7 +3,7 @@ Ha llegado a nuestras manos un proyecto muy interesante, ¡hacer una red social!
 
 Nuestro cliente nos ha dado una URL de la que debemos extraer los datos, ya que tienen montado el back y nosotras solamente tenemos que pintar la información en el front.
 
-**FLUJO**:
+## Flujo
 Al cargar la página debemos pintar un listado de princesas con la siguiente información:
 - Nombre
 - Foto
@@ -12,7 +12,7 @@ Al cargar la página debemos pintar un listado de princesas con la siguiente inf
 Al hacer click sobre una princesa podemos cambiarle el fondo a color azul claro para marcarla como nuestra amiga.
 
 Extraeremos los datos de la siguiente URL: 'https://beta.adalab.es/ejercicios-extra/js-fetch-arrays-princesas-disney/data/users.json'
-Ejemplo de objeto que llega del servidor:
+Ejemplo de JSON que llega del servidor:
 
  ```js
 {
