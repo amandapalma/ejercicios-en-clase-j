@@ -14,23 +14,7 @@ const getDataFromApi = () => {
     });
 };
 
-// catalog
-
-// Esta función pinta los productos con un for...of
-// const paintProducts = () => {
-//   let codeHTML = '';
-//   for (const product of products) {
-//     codeHTML += `<article class="card">`;
-//     codeHTML += `<img src="${product.imageUrl}" class="card__img" alt="Camiseta de ${product.name}" />`;
-//     codeHTML += `<h3 class="card__title">${product.name}</h3>`;
-//     codeHTML += `<p class="card__description">${product.price} €</p>`;
-//     codeHTML += `<button class="card__btn" id="${product.id}">Añadir a la cesta</button>`;
-//     codeHTML += `</article>`;
-//   }
-//   const cardsElement = document.querySelector('.js-cards');
-//   cardsElement.innerHTML = codeHTML;
-//   listenProductsClicks();
-// };
+// products
 
 const paintProducts = () => {
   let codeHTML = '';
@@ -51,9 +35,49 @@ const paintProducts = () => {
   listenProductsClicks();
 };
 
+// cart
+
+const paintCart = () => {
+  let codeHTML = '';
+  for (let index = 0; index < cart.length; index += 1) {
+    codeHTML += `<tbody class="js-cart">`;
+    codeHTML += `<tr>`;
+    codeHTML += `<td>${cart[index].name}</td>`;
+    codeHTML += `<td>${cart[index].price}</td>`;
+    codeHTML += `<td>`;
+    codeHTML += `<button class="card__btn">-</button>`;
+    codeHTML += ` 0 `;
+    codeHTML += `<button class="card__btn">+</button>`;
+    codeHTML += `</td>`;
+    codeHTML += `<td class="text-align-right">${cart[index].price}€</td>`;
+    codeHTML += `</tr>`;
+  }
+  codeHTML += getCartTotalHtmlCode();
+  const cardsElement = document.querySelector('.js-cart');
+  cardsElement.innerHTML = codeHTML;
+};
+
+const getCartTotalHtmlCode = () => {
+  let htmlCode = '';
+  htmlCode += `<tr class="text--bold">`;
+  htmlCode += `  <td>Total</td>`;
+  htmlCode += `  <td colspan="3" class="text-align-right">${getTotalPrice()}€</td>`;
+  htmlCode += `</tr>`;
+  return htmlCode;
+};
+
+const getTotalPrice = () => {
+  let total = 0;
+  for (const product of cart) {
+    total += product.price;
+  }
+  return total;
+  // el for anterior es equivalente a este reduce
+  return cart.reduce((total, product) => total + product.price, 0);
+};
+
 // events
 
-// Las 3 siguientes funciones handleProductsClick hacen lo mismo: buscan en el array products el element clickado y lo meten en el array cart
 const handleProductsClick = ev => {
   // obtenemos el id del producto clickado
   const clickedId = parseInt(ev.currentTarget.id);
@@ -61,25 +85,8 @@ const handleProductsClick = ev => {
   const product = products.find(productItem => productItem.id === clickedId);
   cart.push(product);
   console.log(cart);
+  paintCart();
 };
-
-// const handleProductsClick = ev => {
-//   const clickedId = parseInt(ev.currentTarget.id);
-//   for (const product of products) {
-//     if (product.id === clickedId) {
-//       cart.push(product);
-//       console.log(cart);
-//     }
-//   }
-// };
-
-// const handleProductsClick = ev => {
-// const clickedIndex = ev.currentTarget.dataset.index;
-// const product = products[clickedIndex];
-// console.log('Me han clickado', product);
-// cart.push(product);
-// console.log(cart);
-// };
 
 const listenProductsClicks = () => {
   const productsBtns = document.querySelectorAll('.js-product-inc');
@@ -87,13 +94,10 @@ const listenProductsClicks = () => {
     const productsBtn = productsBtns[index];
     productsBtn.addEventListener('click', handleProductsClick);
   }
-  // El for...of hace lo mismo que el for clásico anterior
-  // for (const productsBtn of productsBtns) {
-  //   productsBtn.addEventListener('click', handleProductsClick);
-  // }
 };
 
 // start app
 
 getDataFromApi();
 paintProducts();
+paintCart();
