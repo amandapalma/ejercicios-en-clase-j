@@ -40,7 +40,6 @@ const paintProducts = () => {
 const paintCart = () => {
   let codeHTML = '';
   for (let index = 0; index < cart.length; index += 1) {
-    codeHTML += `<tbody class="js-cart">`;
     codeHTML += `<tr>`;
     codeHTML += `<td>${cart[index].name}</td>`;
     codeHTML += `<td>${cart[index].price}</td>`;
