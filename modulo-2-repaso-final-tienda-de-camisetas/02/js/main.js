@@ -45,9 +45,9 @@ const paintCart = () => {
     codeHTML += `<td>${cart[index].name}</td>`;
     codeHTML += `<td>${cart[index].price}</td>`;
     codeHTML += `<td>`;
-    codeHTML += `<button class="card__btn">-</button>`;
+    codeHTML += `<button class="card__btn js-cart-increment" id="${cart[index].id}">-</button>`;
     codeHTML += ` 0 `;
-    codeHTML += `<button class="card__btn">+</button>`;
+    codeHTML += `<button class="card__btn js-cart-decrement" id="${cart[index].id}">+</button>`;
     codeHTML += `</td>`;
     codeHTML += `<td class="text-align-right">${cart[index].price}€</td>`;
     codeHTML += `</tr>`;
@@ -55,6 +55,7 @@ const paintCart = () => {
   codeHTML += getCartTotalHtmlCode();
   const cardsElement = document.querySelector('.js-cart');
   cardsElement.innerHTML = codeHTML;
+  listenCartClicks();
 };
 
 const getCartTotalHtmlCode = () => {
@@ -88,11 +89,40 @@ const handleProductsClick = ev => {
   paintCart();
 };
 
+const handleCartIncrementClick = ev => {
+  // obtenemos el id del producto clickado
+  const clickedId = parseInt(ev.currentTarget.id);
+  // buscamos con find
+  const product = cart.find(productItem => productItem.id === clickedId);
+  console.log('El producto a incrementar es', product);
+};
+
+const handleCartDecrementClick = ev => {
+  // obtenemos el id del producto clickado
+  const clickedId = parseInt(ev.currentTarget.id);
+  // buscamos con find
+  const product = cart.find(productItem => productItem.id === clickedId);
+  console.log('El producto a decrementar es', product);
+};
+
 const listenProductsClicks = () => {
   const productsBtns = document.querySelectorAll('.js-product-inc');
   for (let index = 0; index < productsBtns.length; index++) {
     const productsBtn = productsBtns[index];
     productsBtn.addEventListener('click', handleProductsClick);
+  }
+};
+
+const listenCartClicks = () => {
+  const cartIncrementBtns = document.querySelectorAll('.js-cart-increment');
+  for (let index = 0; index < cartIncrementBtns.length; index++) {
+    const productsBtn = cartIncrementBtns[index];
+    productsBtn.addEventListener('click', handleCartIncrementClick);
+  }
+  const cartDecrementBtns = document.querySelectorAll('.js-cart-decrement');
+  for (let index = 0; index < cartDecrementBtns.length; index++) {
+    const productsBtn = cartDecrementBtns[index];
+    productsBtn.addEventListener('click', handleCartDecrementClick);
   }
 };
 
