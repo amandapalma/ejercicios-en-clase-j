@@ -16,7 +16,25 @@ const promos = [
 ];
 
 // Ejemplos con find
-// find devuelve el elemento encontrado o -1
+
+// Este es el código que tiene el método array.find por dentro
+function find(list, method) {
+  for (const item of list) {
+    if (method(item)) {
+      return item;
+    }
+  }
+  return undefined;
+}
+
+const findByName = function (item) {
+  return item.letter === 'C';
+};
+
+const result = find(promos, findByName);
+console.log(result);
+
+// find devuelve el elemento encontrado o undefined
 
 // Los siguientes ejemplos buscan dentro del array la promoción que tiene el nombre Borg.
 // Hacen exactamente lo mismo, pero usando diferentes tipos de funciones.
@@ -61,6 +79,7 @@ const promo6 = promos.find(promo => promo.name === search6);
 console.log('Cuando find no encuentra el elemento retorna', promo6);
 
 // Ejemplos con findIndex
+
 // findIndex funciona exactamente igual find, pero find devuelve el elemento encontrado o undefined
 // y findIndex devuelve el índice encontrado o -1
 
@@ -82,4 +101,4 @@ const promo9 = promos.find(function (promo) {
   console.log('Promo dentro de la función find', promo);
   return promo.name === search9;
 });
-// Aunque hay 3 promociones solo consolea las 2 primeras, porque la segunda es la encontrada. Una vez ha encontrado
+// Aunque hay 3 promociones solo consolea las 2 primeras, porque la segunda es la encontrada. Una vez ha encontrado ya no sigue iterando
