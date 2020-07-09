@@ -74,11 +74,11 @@ const handleProductsClick = ev => {
 // };
 
 // const handleProductsClick = ev => {
-// const clickedIndex = ev.currentTarget.dataset.index;
-// const product = products[clickedIndex];
-// console.log('Me han clickado', product);
-// cart.push(product);
-// console.log(cart);
+//   const clickedIndex = ev.currentTarget.dataset.index;
+//   const product = products[clickedIndex];
+//   console.log('Me han clickado', product);
+//   cart.push(product);
+//   console.log(cart);
 // };
 
 const listenProductsClicks = () => {

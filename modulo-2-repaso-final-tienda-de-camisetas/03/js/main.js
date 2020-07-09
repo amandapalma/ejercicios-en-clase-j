@@ -39,6 +39,7 @@ const paintProducts = () => {
 
 const paintCart = () => {
   let codeHTML = '';
+  console.log(cart);
   for (let index = 0; index < cart.length; index += 1) {
     codeHTML += `<tr>`;
     codeHTML += `<td>${cart[index].name}</td>`;
@@ -84,6 +85,7 @@ const handleProductsClick = ev => {
   // buscamos con find
   const product = products.find(productItem => productItem.id === clickedId);
   cart.push(product);
+  updateLocalStorage();
   console.log(cart);
   paintCart();
 };
@@ -94,6 +96,7 @@ const handleCartIncrementClick = ev => {
   // buscamos con find
   const product = cart.find(productItem => productItem.id === clickedId);
   console.log('El producto a incrementar es', product);
+  updateLocalStorage();
 };
 
 const handleCartDecrementClick = ev => {
@@ -102,6 +105,7 @@ const handleCartDecrementClick = ev => {
   // buscamos con find
   const product = cart.find(productItem => productItem.id === clickedId);
   console.log('El producto a decrementar es', product);
+  updateLocalStorage();
 };
 
 const listenProductsClicks = () => {
@@ -125,8 +129,34 @@ const listenCartClicks = () => {
   }
 };
 
+// local storage
+
+const updateLocalStorage = () => {
+  localStorage.setItem('cart', JSON.stringify(cart));
+};
+
+const getFromLocalStorage = () => {
+  const data = JSON.parse(localStorage.getItem('cart'));
+  if (data !== null) {
+    cart = data;
+  }
+};
+
+// reset
+
+const btnReset = document.querySelector('.js-reset');
+
+const resetCart = () => {
+  cart = [];
+  updateLocalStorage();
+  paintCart();
+};
+
+btnReset.addEventListener('click', resetCart);
+
 // start app
 
 getDataFromApi();
+getFromLocalStorage();
 paintProducts();
 paintCart();

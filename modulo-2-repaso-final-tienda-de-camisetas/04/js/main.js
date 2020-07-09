@@ -39,16 +39,17 @@ const paintProducts = () => {
 
 const paintCart = () => {
   let codeHTML = '';
+  console.log(cart);
   for (let index = 0; index < cart.length; index += 1) {
     codeHTML += `<tr>`;
     codeHTML += `<td>${cart[index].name}</td>`;
     codeHTML += `<td>${cart[index].price}</td>`;
     codeHTML += `<td>`;
-    codeHTML += `<button class="card__btn js-cart-increment" id="${cart[index].id}">-</button>`;
-    codeHTML += ` 0 `;
-    codeHTML += `<button class="card__btn js-cart-decrement" id="${cart[index].id}">+</button>`;
+    codeHTML += `<button class="card__btn js-cart-decrement" id="${cart[index].id}">-</button>`;
+    codeHTML += ` ${cart[index].quantity} `;
+    codeHTML += `<button class="card__btn js-cart-increment" id="${cart[index].id}">+</button>`;
     codeHTML += `</td>`;
-    codeHTML += `<td class="text-align-right">${cart[index].price}€</td>`;
+    codeHTML += `<td class="text-align-right">${cart[index].price * cart[index].quantity}€</td>`;
     codeHTML += `</tr>`;
   }
   codeHTML += getCartTotalHtmlCode();
@@ -69,7 +70,7 @@ const getCartTotalHtmlCode = () => {
 const getTotalPrice = () => {
   let total = 0;
   for (const product of cart) {
-    total += product.price;
+    total += product.price * product.quantity;
   }
   return total;
   // el for anterior es equivalente a este reduce
@@ -84,7 +85,7 @@ const handleProductsClick = ev => {
   // buscamos con find
   const product = products.find(productItem => productItem.id === clickedId);
   cart.push(product);
-  console.log(cart);
+  updateLocalStorage();
   paintCart();
 };
 
@@ -92,16 +93,49 @@ const handleCartIncrementClick = ev => {
   // obtenemos el id del producto clickado
   const clickedId = parseInt(ev.currentTarget.id);
   // buscamos con find
-  const product = cart.find(productItem => productItem.id === clickedId);
-  console.log('El producto a incrementar es', product);
+  // const product = cart.find(productItem => productItem.id === clickedId);
+  // buscamos con for of, que lo mismo que si utilizáramos la función findCartProduct
+  // con el código: const productItem = findCartProduct(clickedId)
+  for (const productItem of cart) {
+    // cuando encontramos el producto
+    if (productItem.id === clickedId) {
+      // lo incrementamos
+      productItem.quantity += 1;
+      console.log(productItem);
+    }
+  }
+  updateLocalStorage();
+  paintCart();
+};
+
+const findCartProduct = clickedId => {
+  for (const productItem of cart) {
+    if (productItem.id === clickedId) {
+      return productItem;
+    }
+  }
 };
 
 const handleCartDecrementClick = ev => {
   // obtenemos el id del producto clickado
   const clickedId = parseInt(ev.currentTarget.id);
-  // buscamos con find
-  const product = cart.find(productItem => productItem.id === clickedId);
-  console.log('El producto a decrementar es', product);
+  // podriamos utilizar find index para buscar la posición del elemento a borrar
+  // const index = cart.findIndex(productItem => productItem.id === clickedId);
+  // buscamos
+  for (let index = 0; index < cart.length; index++) {
+    const productItem = cart[index];
+    // cuando encontramos el producto
+    if (productItem.id === clickedId) {
+      // lo decrementamos
+      if (productItem.quantity > 1) {
+        productItem.quantity -= 1;
+      } else {
+        cart.splice(index, 1);
+      }
+    }
+  }
+  updateLocalStorage();
+  paintCart();
 };
 
 const listenProductsClicks = () => {
@@ -125,8 +159,34 @@ const listenCartClicks = () => {
   }
 };
 
+// local storage
+
+const updateLocalStorage = () => {
+  localStorage.setItem('cart', JSON.stringify(cart));
+};
+
+const getFromLocalStorage = () => {
+  const data = JSON.parse(localStorage.getItem('cart'));
+  if (data !== null) {
+    cart = data;
+  }
+};
+
+// reset
+
+const btnReset = document.querySelector('.js-reset');
+
+const resetCart = () => {
+  cart = [];
+  updateLocalStorage();
+  paintCart();
+};
+
+btnReset.addEventListener('click', resetCart);
+
 // start app
 
 getDataFromApi();
+getFromLocalStorage();
 paintProducts();
 paintCart();
