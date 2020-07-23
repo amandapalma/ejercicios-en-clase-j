@@ -6,7 +6,8 @@ import EmailReader from './EmailReader';
 const emails = [
   {
     subject: 'Entradas ya a la venta',
-    time: '15:27'
+    time: '15:27',
+    deleted: true
   },
   {
     from: 'GitHub',
@@ -21,12 +22,16 @@ const emails = [
 ];
 
 class App extends React.Component {
+  removeEmail(emailId, foo, faa) {
+    console.log('Borrando email', emailId, foo, faa);
+  }
+
   render() {
     return (
       <div>
         <Header />
         <EmailList emails={emails} />
-        <EmailReader />
+        <EmailReader username="Maricarmen" deleteEmail={this.removeEmail} />
       </div>
     );
   }
