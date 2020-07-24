@@ -5,6 +5,7 @@ class Header extends React.Component {
     super(props);
     this.handleInboxClick = this.handleInboxClick.bind(this);
     this.handleTrashClick = this.handleTrashClick.bind(this);
+    this.handleFilterText = this.handleFilterText.bind(this);
   }
 
   handleInboxClick(ev) {
@@ -15,6 +16,10 @@ class Header extends React.Component {
   handleTrashClick(ev) {
     ev.preventDefault();
     console.log('El elemento clickado es', ev.currentTarget);
+  }
+
+  handleFilterText(ev) {
+    this.props.pepino(ev.currentTarget.value);
   }
 
   renderLogo() {
@@ -39,7 +44,12 @@ class Header extends React.Component {
           <span className="fas fa-trash"></span>
           Papelera
         </button>
-        <input className="form__input-text" type="text" placeholder="Buscar un correo" />
+        <input
+          className="form__input-text"
+          type="text"
+          placeholder="Buscar un correo"
+          onChange={this.handleFilterText}
+        />
       </form>
     );
   }
