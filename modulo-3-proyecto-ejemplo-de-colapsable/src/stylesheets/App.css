@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.active p {
+  display: block
+}
+
+p {display: none}
