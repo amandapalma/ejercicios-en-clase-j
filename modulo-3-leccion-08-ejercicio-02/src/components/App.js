@@ -41,7 +41,7 @@ class App extends React.Component {
         </h1>
         <form>
           <div>
-            <label htmlFor="email" className="form__label ">
+            <label htmlFor="email" className="form__label">
               Email
             </label>
             <input
@@ -53,7 +53,7 @@ class App extends React.Component {
             />
           </div>
           <div>
-            <label htmlFor="job" className="form__label ">
+            <label htmlFor="job" className="form__label">
               Job
             </label>
             <input
