@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+  display: flex
+}
+
+img{
+  width: 160px
+}
+.ralph-wrapper{
+  background: #eaeaea
+}
+
+.ralph-wrapper.red {background: red}
+.ralph-wrapper.green {background: green}
+.ralph-wrapper.blue {background: blue}
+
+
+
+
+
