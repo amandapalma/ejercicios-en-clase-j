@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const App = props => {
+const Product = props => {
   return (
     <article className="card">
       <img src={props.imgUrl} className="card__img" alt={props.name} />
       <h3 className="card__title">{props.name}</h3>
       <p className="card__description">{props.price} €</p>
-      <button className="card__btn">Ver detalle del producto</button>
+      <Link to={`/product/${props.id}`} className="card__btn">
+        Ver detalle del producto
+      </Link>
     </article>
   );
 };
 
-export default App;
+export default Product;
